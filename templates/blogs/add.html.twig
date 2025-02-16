@@ -1,0 +1,37 @@
+{% extends 'blogs/index.html.twig' %}
+
+{% block title %}Add Blog{% endblock %}
+
+{% block body %}
+    <style>
+        .larger-textarea {
+            min-height: 250px; /* Add a minimum height */
+            max-width: 100%; /* Ensure it doesn't exceed the container's width */
+        }
+    </style>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 40rem;">
+        <h2 class="text-center text-primary mb-4">Create a New Blog</h2>
+        
+        {# Render the form here #}
+        {{ form_start(form) }}
+            <div class="mb-3">
+                <label class="form-label fw-bold">Title</label>
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Enter title'}}) }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">Content</label>
+                {{ form_widget(form.contenu, {'attr': {'class': 'form-control larger-textarea', 'rows': '10', 'placeholder': 'Write your content here...'}}) }}
+            </div>
+            <button class="btn btn-success w-100">Publish Blog</button>
+        {{ form_end(form) }}
+
+        <br>
+        {# Flash message for success #}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'auth/index.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="form-container">
+            <h2 class="title">Login</h2>
+
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-save">Login</button>
+                </div>
+            </form>
+            <p class="back-text">If you don't have an account, <a href="/signup" class="signup-link">SignUp</a></p>
+            <a href="/" class="back-link">Back to Home</a>
+        </div>
+    </div>
+
+    <style>
+        /* Center everything */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Style the form container */
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Style form inputs */
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the button */
+        .btn-save {
+            background-color: #32CD32;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-save:hover {
+            background-color: #28a745;
+        }
+
+        /* Align title */
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Align the back link */
+        .back-link {
+            margin-top: 15px;
+            text-align: center;
+            display: block;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
